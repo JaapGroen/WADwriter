@@ -1,0 +1,65 @@
+[
+  {
+    "name":"QC Como NGW",
+    "fields":[
+      {"name":"PatientID","value":"ngwcomo1","format":"string","type":"string"},
+      {"name":"PatientName","value":"Como NGW","format":"string","type":"string"},
+      {"name":"StudyDescription","value":"Jaartest","format":"string","type":"string"},
+      {"name":"SeriesDescription","value":"Jaartest","format":"string","type":"string"},
+      {"name":"StationName","value":"OLVGNUCWCOMO1","format":"string","type":"string"},
+      {"name":"StudyDate","value":"","format":"yyyymmdd","type":"string"},
+      {"name":"StudyTime","value":"","format":"hhmmss","type":"string"},
+      {"name":"ContentDate","value":"","format":"yyyymmdd","type":"string"},
+      {"name":"background","value":"","format":"float","type":"string"},
+      {"name":"visual_check","value":"","format":"select","options":["OK","error"],"type":"select"},
+      {"name":"light_check","value":"","format":"select","options":["OK","error"],"type":"select"},
+      {"name":"general_status","value":"","format":"select","options":["OK","error"],"type":"select"},
+      {"name":"cr_measured","value":"","format":"float","type":"string"},
+      {"name":"act_measured","value":"","format":"float","type":"string"},
+      {"name":"by","value":"","format":"string","type":"string"}
+    ],
+    "description":"Jaartest van de Como besmettingsmonitor van NG West"
+  },
+  {
+    "name":"QC Como NGO",
+    "fields":[
+      {"name":"PatientID","value":"ngocomo1","format":"string","type":"string"},
+      {"name":"PatientName","value":"Como NGO","format":"string","type":"string"},
+      {"name":"StudyDescription","value":"Jaartest","format":"string","type":"string"},
+      {"name":"SeriesDescription","value":"Jaartest","format":"string","type":"string"},
+      {"name":"StationName","value":"OLVGNUCOCOMO1","format":"string","type":"string"},
+      {"name":"StudyDate","value":"","format":"yyyymmdd","type":"string"},
+      {"name":"StudyTime","value":"","format":"hhmmss","type":"string"},
+      {"name":"ContentDate","value":"","format":"yyyymmdd","type":"string"},
+      {"name":"background","value":"","format":"float","type":"string"},
+      {"name":"visual_check","value":"","format":"select","options":["OK","error"],"type":"select"},
+      {"name":"light_check","value":"","format":"select","options":["OK","error"],"type":"select"},
+      {"name":"general_status","value":"","format":"select","options":["OK","error"],"type":"select"},
+      {"name":"cr_measured","value":"","format":"float","type":"string"},
+      {"name":"act_measured","value":"","format":"float","type":"string"},
+      {"name":"by","value":"","format":"string","type":"string"}
+    ],
+    "description":"Jaartest van de Como besmettingsmonitor van NG Oost"
+  },
+  {
+    "name":"QC Como AW",
+    "fields":[
+      {"name":"PatientID","value":"apowcomo1","format":"string","type":"string"},
+      {"name":"PatientName","value":"Como AW","format":"string","type":"string"},
+      {"name":"StudyDescription","value":"Jaartest","format":"string","type":"string"},
+      {"name":"SeriesDescription","value":"Jaartest","format":"string","type":"string"},
+      {"name":"StationName","value":"OLVGAPOWCOMO1","format":"string","type":"string"},
+      {"name":"StudyDate","value":"","format":"yyyymmdd","type":"string"},
+      {"name":"StudyTime","value":"","format":"hhmmss","type":"string"},
+      {"name":"ContentDate","value":"","format":"yyyymmdd","type":"string"},
+      {"name":"background","value":"","format":"float","type":"string"},
+      {"name":"visual_check","value":"","format":"select","options":["OK","error"],"type":"select"},
+      {"name":"light_check","value":"","format":"select","options":["OK","error"],"type":"select"},
+      {"name":"general_status","value":"","format":"select","options":["OK","error"],"type":"select"},
+      {"name":"cr_measured","value":"","format":"float","type":"string"},
+      {"name":"act_measured","value":"","format":"float","type":"string"},
+      {"name":"by","value":"","format":"string","type":"string"}
+    ],
+    "description":"Jaartest van de Como besmettingsmonitor van Hotlab West"
+  }
+]
