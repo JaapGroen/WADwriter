@@ -35,4 +35,4 @@
 * Add WADwriter to your webserver with DocumentRoot "WADwriter-folder/dist"
 
 ## Usage
-* The tool makes uses of the json data in the file "recipes.json" in the static/public folder. It enables pre-defined datasets which are partly prefilled with the proper dicom fields and information. The file can be edited outside the vue js development enviroment. 
+* The tool makes use of the json data in the file "recipes.json" in the static/public folder. It enables pre-defined datasets which are partly prefilled with the proper dicom fields and information. The file can be edited outside the vue js development enviroment. 
