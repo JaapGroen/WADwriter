@@ -62,7 +62,6 @@
   border-bottom:2px solid #FFFFFF;
   position:fixed;
   width:100%;
-  z-index:10;
 }
 </style>
 

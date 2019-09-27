@@ -2,7 +2,7 @@
   <div class="pageoverlay">
     <div class="loginbox">
       <div class="overlaytop">
-        <span v-if="!showAPI">WADreporter login</span>
+        <span v-if="!showAPI">WADwriter login</span>
         <span v-if="showAPI">WADQC API information</span>
       </div>
       <div class="overlaycontent">

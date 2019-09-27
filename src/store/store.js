@@ -8,7 +8,8 @@ export default new Vuex.Store({
   state: {
     token: localStorage.getItem('WADtoken') || '',
     user : localStorage.getItem('WADuser') || '',
-    api:{ip:'172.16.13.66',port:3000}
+    api:{ip:'172.16.13.66',port:3000},
+    recipes:''
   },
   mutations: {
       auth_success(state, data){
@@ -23,6 +24,9 @@ export default new Vuex.Store({
       setAPI(state,api){
           state.api=api
       },
+      setRecipes(state,recipes){
+          state.recipes=recipes
+      }
   },
   actions: {
     login({commit}, user){
@@ -60,7 +64,8 @@ export default new Vuex.Store({
     isLoggedIn: state => !!state.token,
     authStatus: state => state.status,
     user: state => state.user,
-    api: state => state.api
+    api: state => state.api,
+    recipes: state => state.recipes
   }
 })
 

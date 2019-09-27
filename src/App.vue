@@ -5,33 +5,24 @@
         integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <Navbar></Navbar>
-    <Recipes v-bind:recipes="recipes"></Recipes>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Navbar from './components/Navbar'
 import store from '@/store/store'
 import router from '@/router'
 import {HTTP} from './main'
 import RecipesJSON from '../public/recipes.json'
-import Recipes from '@/components/Recipes'
 
 export default {
   name: 'app',
-  components: {
-    Navbar,
-    Recipes
-  },
   data(){
     return{
-      recipes:[],
     }
   },
   created: function(){
-    this.recipes=RecipesJSON
+    this.$store.commit('setRecipes',RecipesJSON)
     HTTP.interceptors.response.use(undefined, err => {
       return new Promise(function () {
         if ((err.response.status === 401 || err.response.status === 422) && err.config && !err.config.__isRetryRequest) {
