@@ -9,10 +9,16 @@
       </div>
       <div class="overlaycontent">
         <div class="tablerow" v-for="field in recipe.fields">
-          <div class="tablecellkey">
+          <div class="tablecellkey" v-if="!field.new">
+            {{field.name}}
+          </div>
+          <div class="tablecellkey" v-if="field.new">
             <input class="textbox" type="text" v-model="field.name">
           </div>
-          <div class="tablecellvalue" v-if="field.type=='string'">
+          <div class="tablecellvalue" v-if="field.type=='string' && field.fixed">
+            {{field.value}}
+          </div>
+          <div class="tablecellvalue" v-if="field.type=='string' && !field.fixed">
             <input class="textbox" type="text" v-model="field.value" :placeholder="field.format">
           </div>
           <div class="tablecellvalue" v-if="field.type=='select'">
@@ -24,14 +30,14 @@
             <input class="textbox" type="file" multiple ref="file" v-on:change="handleFileUpload()">
           </div>
           <div class="tablecellbutton">
-            <button class="smbutton" @click="removeField(field.name)">
+            <button class="btn btn-small" @click="removeField(field.name)">
               <i class="fas fa-trash-alt"></i>
             </button>
           </div>
         </div>
         <div class="tablerow">
           <div class="tablecellkey">
-            <button class="button" @click="sendForm">
+            <button class="btn btn-large" @click="sendForm">
               <i class="fas fa-paper-plane"></i>
               Submit data to WADQC
             </button>
@@ -42,11 +48,11 @@
       </div>
       <div class="overlayfooter">
         <div>
-          <button class="smbutton" @click="addField">
+          <button class="btn btn-small" @click="addField">
             <i class="fas fa-plus-square"></i>
             Add field
           </button>
-          <button class="smbutton" @click="addFile">
+          <button class="btn btn-small" @click="addFile">
             <i class="fas fa-plus-square"></i>
             Add file(s)
           </button>
@@ -70,9 +76,13 @@ export default{
     return{
       files:[],
       msg:'',
-      apiURL:'http://'+this.$store.getters.api.ip+':'+this.$store.getters.api.port+'/api',
     }
   },
+  computed:{
+        apiURL(){
+            return 'http://'+this.$store.getters.api.ip+':'+this.$store.getters.api.port+'/api'
+        }
+    },
   methods:{
     closeRecipe(){
       this.$emit('closeRecipe','thanks')
@@ -107,7 +117,7 @@ export default{
       }
     },
     addField(){
-      this.recipe.fields.push({name:"",format:"string",value:"",type:"string"})  
+      this.recipe.fields.push({name:"",format:"string",value:"",type:"string",new:"true"})  
     },
     addFile(){
       this.recipe.fields.push({name:"Bijlagen",format:"file",value:"",type:"file"})
@@ -132,87 +142,6 @@ export default{
 </script>
 
 <style>
-
-.pageoverlay{
-  display:flex;
-  flex-direction:row;
-  align-items:center;
-  justify-content:center;
-  background-color:rgba(0, 0, 0, 0.5);
-  height:100%;
-  width:100%;
-  z-index:75;
-  position:fixed;
-  top:0px;
-  left:0px;
-}
-
-.overlaybox{
-  display:flex;
-  flex-direction:column;
-  height:70%;
-  width:70%;
-  box-sizing: border-box;
-  align-items:center;
-  justify-content:center;
-}
-
-.overlaytop{
-  height:50px;
-  width:100%;
-  background:#444444;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
-  padding: 15px;
-  display:flex;
-  flex-direction:row;
-  box-sizing: border-box;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.overlaycontent{
-  display:flex;
-  flex-direction:row;
-  width:100%;
-  justify-content:center;
-  max-height:calc(100% - 80px);
-  background:#2F2F2F;
-  box-sizing: border-box;
-  position: relative;
-  overflow-y:auto;
-  flex-wrap:wrap;
-}
-
-.overlayfooter{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-sizing: border-box;
-  padding-left:20px;
-  padding-right:20px;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  background:#444444;
-  height:30px;
-  font-size:12px;
-  width:100%;
-}
-
-.tablerow{
-  display:flex;
-  flex-direction:row;
-  width:100%;
-  justify-content:space-around;
-}
-
-.tablerow:nth-child(even){
-    background-color: #0C0C0C;
-}
-.tablerow:nth-child(odd){
-    background:#2F2F2F;
-}
-
 .tablecellkey{
   width:33%;
   padding:5px;
@@ -227,38 +156,4 @@ export default{
   width:5%;
   padding:5px;
 }
-
-.pointer{
-  cursor:pointer;
-}
-
-.button{
-  border-radius: 5px;
-  border: none;
-  font-size: 15px;  
-  height:30px;
-  cursor:pointer;
-}
-
-.smbutton{
-  border-radius: 5px;
-  border: none;
-  font-size: 10px;  
-  height:20px;
-  cursor:pointer;
-}
-
-.textbox{
-  border:none;
-  background-color:#444444;
-  width:100%;
-  height:30px;
-  border-bottom:3px solid #0FAAEA;
-  color:white;
-  font-family: 'Roboto', sans-serif;
-  border-radius:5px;
-  padding-left:5px;
-  box-sizing:border-box;
-}
-
 </style>
