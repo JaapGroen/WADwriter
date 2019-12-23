@@ -2,7 +2,7 @@
   <div class="pageoverlay">
     <div class="loginbox">
       <div class="overlaytop">
-        <span v-if="!showAPI">WADreporter login</span>
+        <span v-if="!showAPI">WADwriter login</span>
         <span v-if="showAPI">WADQC API information</span>
       </div>
       <div class="overlaycontent">
@@ -29,7 +29,6 @@
 </template>
 
 <script>
-    import {HTTP} from '@/main'
 
   export default {
     data(){
@@ -52,7 +51,7 @@
           this.$store.dispatch('login',{apiURL:this.apiURL,credentials:this.credentials})
           .then((resp)=>{
               if (resp.data.success){
-                  this.$router.push('/selectors').catch(()=>{})
+                  this.$router.push('/recipes').catch(()=>{})
               } else {
                   this.msg = resp.data.msg
               }
@@ -67,8 +66,8 @@
           })
       },
       toggleView(){
-        this.showAPI=!this.showAPI;
-        this.msg=""
+          this.showAPI=!this.showAPI;
+          this.msg=""
        },
     },
   }

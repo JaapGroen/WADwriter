@@ -8,7 +8,7 @@
         <i class="fas fa-times pointer" @click="closeRecipe"></i>
       </div>
       <div class="overlaycontent">
-        <div class="tablerow" v-for="field in recipe.fields">
+        <div class="tablerow" v-for="field in recipe.fields" v-bind:key="field.name">
           <div class="tablecellkey" v-if="!field.new">
             {{field.name}}
           </div>
@@ -23,7 +23,7 @@
           </div>
           <div class="tablecellvalue" v-if="field.type=='select'">
             <select v-model="field.value">
-              <option v-for="option in field.options">{{option}}</option>
+              <option v-for="option in field.options" v-bind:key="option">{{option}}</option>
             </select>
           </div>
           <div class="tablecellvalue" v-if="field.type=='file'">
