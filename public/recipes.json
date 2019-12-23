@@ -1,66 +1,36 @@
 [
   {
-    "name":"QC Como NGW",
+    "name":"First SR",
     "fields":[
-      {"name":"PatientID","value":"OLVGNUCMCOMO1","format":"string","type":"string","fixed":"true"},
-      {"name":"PatientName","value":"OLVGNUCMCOMO1","format":"string","type":"string","fixed":"true"},
-      {"name":"StudyDescription","value":"Jaartest","format":"string","type":"string"},
-      {"name":"SeriesDescription","value":"Jaartest","format":"string","type":"string"},
-      {"name":"StationName","value":"OLVGNUCWCOMO1","format":"string","type":"string","fixed":"true"},
+      {"name":"PatientID","value":"123456","format":"string","type":"string"},
+      {"name":"PatientName","value":"SR1","format":"string","type":"string"},
+      {"name":"StudyDescription","value":"QC test","format":"string","type":"string"},
+      {"name":"SeriesDescription","value":"QC test","format":"string","type":"string"},
+      {"name":"StationName","value":"WADWRITER1","format":"string","type":"string"},
       {"name":"StudyDate","value":"","format":"yyyymmdd","type":"string"},
       {"name":"StudyTime","value":"","format":"hhmmss","type":"string"},
       {"name":"ContentDate","value":"","format":"yyyymmdd","type":"string"},
-      {"name":"background","value":"","format":"float","type":"string"},
-      {"name":"visual_check","value":"","format":"select","options":["OK","error"],"type":"select"},
-      {"name":"light_check","value":"","format":"select","options":["OK","error"],"type":"select"},
-      {"name":"general_status","value":"","format":"select","options":["OK","error"],"type":"select"},
-      {"name":"cr_measured","value":"","format":"float","type":"string"},
-      {"name":"act_measured","value":"","format":"float","type":"string"},
-      {"name":"by","value":"","format":"string","type":"string"}
+      {"name":"parameterA","value":"","format":"float","type":"string"},
+      {"name":"parameterB","value":"","format":"select","options":["OK","error"],"type":"select"},
+      {"name":"parameterC","value":"prefilled value","format":"string","type":"string"}
     ],
-    "description":"Jaartest van de Como besmettingsmonitor van NG West"
+    "description":"Description of the first SR."
   },
   {
-    "name":"QC Como NGO",
+    "name":"Second SR",
     "fields":[
-      {"name":"PatientID","value":"OLVGNUCOCOMO1","format":"string","type":"string","fixed":"true"},
-      {"name":"PatientName","value":"OLVGNUCOCOMO1","format":"string","type":"string","fixed":"true"},
-      {"name":"StudyDescription","value":"Jaartest","format":"string","type":"string"},
-      {"name":"SeriesDescription","value":"Jaartest","format":"string","type":"string"},
-      {"name":"StationName","value":"OLVGNUCOCOMO1","format":"string","type":"string","fixed":"true"},
+      {"name":"PatientID","value":"234567","format":"string","type":"string"},
+      {"name":"PatientName","value":"SR2","format":"string","type":"string"},
+      {"name":"StudyDescription","value":"QC test","format":"string","type":"string"},
+      {"name":"SeriesDescription","value":"QC test","format":"string","type":"string"},
+      {"name":"StationName","value":"WADWRITER2","format":"string","type":"string"},
       {"name":"StudyDate","value":"","format":"yyyymmdd","type":"string"},
       {"name":"StudyTime","value":"","format":"hhmmss","type":"string"},
       {"name":"ContentDate","value":"","format":"yyyymmdd","type":"string"},
-      {"name":"background","value":"","format":"float","type":"string"},
-      {"name":"visual_check","value":"","format":"select","options":["OK","error"],"type":"select"},
-      {"name":"light_check","value":"","format":"select","options":["OK","error"],"type":"select"},
-      {"name":"general_status","value":"","format":"select","options":["OK","error"],"type":"select"},
-      {"name":"cr_measured","value":"","format":"float","type":"string"},
-      {"name":"act_measured","value":"","format":"float","type":"string"},
-      {"name":"by","value":"","format":"string","type":"string"}
+      {"name":"parameterA","value":"","format":"float","type":"string"},
+      {"name":"parameterB","value":"","format":"select","options":["OK","error"],"type":"select"},
+      {"name":"parameterC","value":"prefilled value","format":"string","type":"string"}
     ],
-    "description":"Jaartest van de Como besmettingsmonitor van NG Oost"
-  },
-  {
-    "name":"QC Como AW",
-    "fields":[
-      {"name":"PatientID","value":"OLVGAPOWCOMO1","format":"string","type":"string","fixed":"true"},
-      {"name":"PatientName","value":"OLVGAPOWCOMO1","format":"string","type":"string","fixed":"true"},
-      {"name":"StudyDescription","value":"Jaartest","format":"string","type":"string"},
-      {"name":"SeriesDescription","value":"Jaartest","format":"string","type":"string"},
-      {"name":"StationName","value":"OLVGAPOWCOMO1","format":"string","type":"string","fixed":"true"},
-      {"name":"StudyDate","value":"","format":"yyyymmdd","type":"string"},
-      {"name":"StudyTime","value":"","format":"hhmmss","type":"string"},
-      {"name":"ContentDate","value":"","format":"yyyymmdd","type":"string"},
-      {"name":"background","value":"","format":"float","type":"string"},
-      {"name":"visual_check","value":"","format":"select","options":["OK","error"],"type":"select"},
-      {"name":"light_check","value":"","format":"select","options":["OK","error"],"type":"select"},
-      {"name":"general_status","value":"","format":"select","options":["OK","error"],"type":"select"},
-      {"name":"cr_measured","value":"","format":"float","type":"string"},
-      {"name":"act_measured","value":"","format":"float","type":"string"},
-      {"name":"by","value":"","format":"string","type":"string"}
-    ],
-    "description":"Jaartest van de Como besmettingsmonitor van Hotlab West"
+    "description":"Description of the second SR."
   }
 ]
-
