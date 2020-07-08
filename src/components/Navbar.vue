@@ -66,6 +66,29 @@ export default {
   }
 </script>
 
-<style>
+<style scoped>
+.header{
+  display:flex;
+  flex-direction:row;
+  height:100px;
+  align-items:center;
+  box-sizing: border-box;
+  padding:20px;
+  justify-content:space-between;
+  border-bottom:2px solid #FFFFFF;
+  position:fixed;
+  width:100%;
+}
 
+.menuitem{
+  display:flex;
+  flex-direction:row;
+  margin:2px;
+  align-items:center;
+}
+
+.menu{
+  display:flex;
+  flex-direction:row;
+}
 </style>

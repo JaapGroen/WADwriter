@@ -1,46 +1,50 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import store from '../store/store.js'
+import {HTTP} from '@/main'
+
 import Login from '@/components/Login'
 import Recipes from '@/components/Recipes'
-import Recipe from '@/components/Recipe'
+
 
 Vue.use(Router)
 
 let router = new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'Login',
-      component: Login
-    },
-    {
-      path: '/recipes',
-      name: 'recipes',
-      component: Recipes,
-    }
-  ]
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            name: 'Login',
+            component: Login,
+            meta: {
+                guest: true
+            }
+        },
+        {
+            path: '/recipes',
+            name: 'recipes',
+            component: Recipes,
+            meta: {
+                requiresAuth: true,
+            },
+        }
+    ]
 })
 
-var checked=false;
-
 router.beforeEach((to, from, next) => {
-  if(to.path=='/'){
-    if(store.getters.isLoggedIn){
-      next('/recipes')
+    if (to.matched.some(record => record.meta.requiresAuth)){
+        if (localStorage.getItem('WADtoken') == null || localStorage.getItem('WADuser') == null) {
+            next('/login')
+        } else if (store.getters.isLoggedIn){
+            next()
+        }
+    } else {
+        var token = localStorage.getItem('WADtoken')
+        var user = JSON.parse(localStorage.getItem('WADuser'))
+        store.commit('auth_success',{token:token,user:user})
+        HTTP.defaults.headers['Authorization'] = 'JWT '+token
+        next()
     }
-    next()
-  }
-  if(to.matched.some(record => record.meta.requiresAuth)) {
-    if (store.getters.isLoggedIn) {
-      next()
-      return
-    }
-    next('/')
-  } else {
-    next()
-  }
 })
 
 export default router

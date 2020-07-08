@@ -8,7 +8,7 @@ export default new Vuex.Store({
   state: {
     token: localStorage.getItem('WADtoken') || '',
     user : JSON.parse(localStorage.getItem('WADuser')) || '',
-    api:{ip:'<wadapi ip>',port:'<wadapi port>'},
+    api:{ip:'<wadqc api ip here>',port:'<wadqc api port here>'},
     recipes:''
   },
   mutations: {
@@ -32,8 +32,12 @@ export default new Vuex.Store({
   actions: {
     setAPI({commit},payload){
       return new Promise((resolve,reject) => {
-          commit('setAPI',{ip:payload.ip,port:payload.port})
-          resolve(true)
+          try{
+            commit('setAPI',{ip:payload.ip,port:payload.port})
+            resolve(true)
+          }catch(error){
+              reject(error)
+          }
       })
     },
     login({commit}, payload){
@@ -64,11 +68,15 @@ export default new Vuex.Store({
     },
     logout({commit}){
       return new Promise((resolve, reject) => {
-        commit('logout')
-        localStorage.removeItem('WADtoken')
-        localStorage.removeItem('WADuser')
-        delete HTTP.defaults.headers['Authorization']
-        resolve()
+          try{
+            commit('logout')
+            localStorage.removeItem('WADtoken')
+            localStorage.removeItem('WADuser')
+            delete HTTP.defaults.headers['Authorization']
+            resolve(true)
+          }catch(error){
+              reject(error)
+          }
       })
     },
   },
